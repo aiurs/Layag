@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Booking - Layag Travels</title>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="book.css">
+        <link rel="stylesheet" href="footer.css">
+    </head>
+    <body>
+        <nav>
+            <div class="nav-container">
+                <img src="images/logo.png" class="logo">
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">HOME</a>
+                    <a href="index.html#tours" class="nav-link">TOURS</a>
+                    <a href="booking.html" class="nav-link">BOOKING</a>
+                    <a href="about.html" class="nav-link">ABOUT</a>
+                </div>
+            </div>
+        </nav>
+
+        <section class="booking-title">
+            <h2>Book Your Tour Package</h2>
+            <p>Fill out the forms below to reserve your slot, and our team will contact you.</p>
+        </section>
+
+        <section class="booking-forms" id="booking">
+            <h3>Booking Forms</h3>
+            <form id="bookForm" onsubmit="bookNow(); return false;">
+                <div class="personal-info">
+                    <h4>PERSONAL INFORMATION</h4>
+                    <div class="input-text">
+                        <div class="left">
+                            <label><b>Full Name</b></label>
+                            <br>
+                            <input type="text" name="fullname" required>
+                            <br>
+                            <label><b>Phone Number</b></label> 
+                            <br>
+                            <input type="text" name="number" required>
+                            <br>
+                        </div>
+                        <div class="right">
+                            <label><b>Email</b></label> 
+                            <br>
+                            <input type="text" name="email" required>
+                            <br>
+                            <label><b>Facebook Account Link</b></label> 
+                            <br>
+                            <input type="text" name="facebook" required>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="tour-details">
+                    <h4>TOUR DETAILS</h4>
+                    <div class="input-text">
+                        <div class="left">
+                            <label><b>Tour Package</b></label> 
+                            <br>
+                            <select id="tour" required>
+                                <option value="" disabled selected>Select Tours</option>
+                                <option value="siquijor">Siquijor 3D2N</option>
+                                <option value="launion">La Union 3D2N</option>
+                                <option value="boracay">Boracay 3D2N</option>
+                                <option value="coron">Coron 3D2N</option>
+                                <option value="siargao">Siargao 4D3N</option>
+                                <option value="camiguin">Camiguin 3D2N</option>
+                                <option value="cebu">Cebu 4D3N</option>
+                                <option value="elnido">El Nido 4D3N</option>
+                                <option value="bohol">Bohol 3D2N</option>
+                            </select>
+                        </div>
+                        <div class="right">
+                            <label><b>Travel Date</b></label>
+                            <br>
+                            <select id="date" required>
+                                <option value="" disabled selected>Select Date</option>
+                            </select>
+                        </div>
+                    </div>
+                    <label><b>Number of Companions</b> <span>(Write N/A if none)</span></label>
+                    <br>
+                    <input type="text" id="companion-count" min="0" required>
+                    <div id="companion-fields"></div>
+                    <label><b>Special Request</b></label>
+                    <br>
+                    <textarea rows="7" cols="100" name="request" placeholder=""></textarea>
+                </div>
+
+                <hr>
+
+                <div class="emergency-contact">
+                    <h4>EMERGENCY CONTACT <span>(Person to contact in case of emergency)</span></h4>
+                    <label><b>Full Name</b></label>
+                    <br>
+                    <input type="text" name="emergency-name" required>
+                    <br>
+                    <label><b>Phone Number</b> </label>
+                    <br>
+                    <input type="text" name="emergency-number" required>
+                    <br>
+                </div>
+
+                <hr>
+
+                <div class="payment-sec">
+                    <h4>PAYMENT</h4>
+                    <label><b>Payment Method</b></label>
+                    <div class="payment-method">
+                        <input type="radio" name="payment" value="online" required> <span>Online Payment (VISA, Mastercard, American Express, PayPal)</span>
+                        <br>
+                        <input type="radio" name="payment" value="ewallet" required> <span>E-Wallet (GCash, Maya)</span>
+                        <br>
+                        <input type="radio" name="payment" value="bank" required> <span>Bank Transfer/Deposit (BDO, BPI, Union Bank, Security Bank)</span>
+                    </div> 
+                    <label><b>QR Links</b></label>
+                    <div class="qr-links">
+                        <div class="online-qr">
+                            <img src="images/qr.png" class="qr">
+                            <p><b>Online Payment</b></p>
+                            <img src="images/online.png" class="method">
+                        </div>
+                        <div class="ewallet-qr">
+                            <img src="images/qr.png" class="qr">
+                            <p><b>E-Wallet</b></p>
+                            <img src="images/e-wallet.png" class="method">
+                        </div>
+                        <div class="bank-qr">
+                            <img src="images/qr.png" class="qr">
+                            <p><b>Bank Transfer</b></p>
+                            <img src="images/bank.png" class="method">
+                        </div>
+                    </div>
+                    <label><b>Proof of Payment</b></label>
+                    <br>
+                    <div class="proof-box">
+                        <label for="payment-proof" class="upload-area">
+                            <img id="preview" src="images/upload.png" alt="Upload" width="80">
+                            <input type="file" id="payment-proof" accept=".png,.jpg,.jpeg" hidden required>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="submit">
+                    <input type="checkbox" name="confirmation"> <span>I confirm that the details provided are correct.</span>
+                    <br>
+                    <button type="submit">BOOK NOW</button>
+                </div>
+            </form>
+
+            <div id="popup" class="popup">
+                <div class="popup-content">
+                    <p>Tour package successfully booked! <span>Confirmation details will be sent to your email.</span></p>
+                    <button onclick="closePopup()">OK</button>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="space"></div>
+            <div class="payment-section">
+                <h2><b>ACCEPTED PAYMENTS</b></h2>
+            </div>
+            <div class="payment">
+                <h3>ONLINE PAYMENT</h3>
+                <img class="online" src="images/online.png">
+            </div>
+            <div class="payment">
+                <h4>E-WALLET</h4>
+                <img class="ewallet" src="images/e-wallet.png">
+            </div>
+            <div class="payment">
+                <h4>BANK TRANSFER/DEPOSIT</h4>
+                <img class="bank" src="images/bank.png">
+            </div>
+            <section class="foot">
+                <div class="footer2">
+                    <img class="logo" src="images/logoforfoot.png">
+                </div>
+                <div class="desti">
+                    <h4>DESTINATIONS</h4>
+                        <ul>
+                            <li><a href="siquijor.html">Siquijor</a></li>
+                            <li><a href="launion.html">La Union</a></li>
+                            <li><a href="boracay.html">Boracay</a></li>
+                            <li><a href="coron.html">Coron</a></li>
+                            <li><a href="siargao.html">Siargao</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="camiguin.html">Camiguin</a></li>
+                            <li><a href="cebu.html">Cebu</a></li>
+                            <li><a href="elnido.html">El Nido</a></li>
+                            <li><a href="bohol.html">Bohol</a></li>
+                            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                        </ul>
+                </div>
+                <div class="contact">
+                    <h4>CONTACT US!</h4>
+                    <br>
+                    <div class="phone">
+                        <img src="images/phone-call.png">
+                        <p>&nbsp;+63 978 345 6498</p>
+                    </div>
+                    <br>
+                    <div class="mail">
+                        <img src="images/mail.png">
+                        <p>&nbsp; layagtravels@gmail.com</p>
+                    </div>
+                    <br>
+                    <div class="location">
+                        <img src="images/location-pin.png">
+                        <p>&nbsp;Cavite, Philippines</p>
+                    </div>
+                </div>
+                <div class="sc">
+                    <h4>FOLLOW US!</h4>
+                    <BR>
+                    <div class="fb">
+                        <a href="https://www.facebook.com/exdsgail"><img src="images/fb.png">
+                        <p>&nbsp;Layag Travels</p></a>
+                    </div>
+                    <div class="insta">
+                        <a href="https://www.instagram.com/exdsgail/"><img src="images/insta.png">
+                        <p>&nbsp;@layagofficial</p></a>
+                    </div>
+                </div>
+                <br>
+            </section>
+                <div class="footik">
+                    <p>© 2026 | LAYAG. All rights reserved.</p>
+                    <div class="bottom-links">
+                        <p><a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwx3mPbohdJVombp_hlBTocyoPofy8HjpCFA&s">Terms & Conditions</a></p>
+                        <p><a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwx3mPbohdJVombp_hlBTocyoPofy8HjpCFA&s">Privacy & Security</a></p>
+                    </div>
+                </div>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>

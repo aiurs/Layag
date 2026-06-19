@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.space{
+    background-color: #f6ecec;
+}
+footer{
+    background-color: #e4d5d5;
+    text-align: center;
+    font-family:'Poppins', sans-serif;
+}
+.payment{
+    display: inline-block;
+    padding: 5px 50px 10px 50px;
+    margin-top: 15px;
+}
+.online, .ewallet, .bank{
+    padding-top: 20px;
+    max-width: 310px;
+    width: 100%;
+    height: auto;
+    padding-bottom: 35px;
+}
+.payment-section{
+    padding-top: 35px;
+}
+.payment-section h2{
+    padding-bottom: 15px;
+}
+.foot{
+    background-color: #d5b1b1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.footer2 img{
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 15px;
+}
+.desti,
+.contact,
+.sc{
+    margin: 20px;
+}
+.desti h4,
+.contact h4,
+.sc h4{
+    padding: 20px 0 10px;
+    text-align: left;
+}
+.desti ul {
+    list-style-type: none;
+    display: inline-block;
+    text-align: left;
+    padding-left: 0;
+    margin-left: 0;
+}
+.desti ul li{
+    padding: 4px;
+}
+.desti ul li a{
+    text-decoration: none;
+    color: black;
+}
+.desti ul li a:hover, .fb a:hover, .insta a:hover{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.contact img{
+    width: 25px;
+    height: 25px;
+}
+.contact img, .contact p{
+    display: inline-block;
+    margin: 0;
+}
+.phone, .mail, .location{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 4px;
+}
+.sc img{
+    width: 25px;
+    height: 25px;
+}
+.sc img, .sc p{
+    display: inline-block;
+    margin: 0;
+}
+.fb a, .insta a{
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    white-space: nowrap;
+    padding: 4px;
+}
+.fb p, .insta p,.location p, .mail p, .phone p{
+    padding-left: 10px;
+}
+.insta{
+    padding-top: 20px;
+}
+.footik{
+    background-color: #d5b1b1;
+    border-top: 1px solid #555;
+    padding: 20px 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.footik p {
+    font-size: 16px;
+}
+.bottom-links {
+    display: flex;
+    gap: 30px;
+}
+.bottom-links p {
+    font-size: 16px;
+}
+.bottom-links a{
+    text-decoration: none;
+    color: black;
+}
+.bottom-links p:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
